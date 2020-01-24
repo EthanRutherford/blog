@@ -1,0 +1,27 @@
+html, body, div, span, p, a, img,
+h1, h2, h3, h4, h5, h6,
+b, u, i, center, ol, ul, li,
+label, button, input, select, textarea,
+canvas, footer, header {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	color: inherit;
+	font: inherit;
+}
+html {
+	font: 20px/1.2;
+}
+:focus {
+	outline: 0;
+}
+button {
+	background: none;
+	cursor: pointer;
+	transition: all 100ms;
+}
+::-moz-focus-inner {
+	border: 0;
+}
