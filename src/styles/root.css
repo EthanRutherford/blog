@@ -1,0 +1,20 @@
+@import "./variables.css";
+
+:global(.root) {
+	min-height: 100%;
+	background-color: var(--not-white);
+	color: var(--carbon);
+}
+
+.header {
+	margin: auto;
+	max-width: 1200px;
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
+}
+
+.main-content {
+	margin: auto;
+	max-width: 1200px;
+}

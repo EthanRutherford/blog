@@ -1,10 +1,14 @@
 import React from "react";
 import {render} from "react-dom";
+import styles from "./styles/root";
 import "./styles/reset";
 
 function App() {
 	return (
-		<div>Hello World!</div>
+		<div className={styles.mainContent}>
+		<header className={styles.header}>bleg</header>
+			hello werld
+		</div>
 	);
 }
 

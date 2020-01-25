@@ -1,3 +1,5 @@
+@import "./variables.css";
+
 html, body, div, span, p, a, img,
 h1, h2, h3, h4, h5, h6,
 b, u, i, center, ol, ul, li,
@@ -12,7 +14,7 @@ canvas, footer, header {
 	font: inherit;
 }
 html {
-	font: 20px/1.2;
+	font: var(--normal)/1.2 'Roboto';
 }
 :focus {
 	outline: 0;
@@ -24,4 +26,7 @@ button {
 }
 ::-moz-focus-inner {
 	border: 0;
+}
+html, body {
+	height: 100%;
 }
