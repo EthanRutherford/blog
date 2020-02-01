@@ -7,7 +7,8 @@
   "license": "ISC",
   "scripts": {
     "build": "webpack --env prod",
-    "start": "start webpack-dev-server"
+    "start": "start webpack-dev-server",
+    "lint": "eslint **/*.jsx"
   },
   "dependencies": {
     "react": "^16.12.0",
@@ -18,6 +19,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
+    "file-loader": "^5.0.2",
     "mini-css-extract-plugin": "^0.9.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
