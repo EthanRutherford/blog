@@ -4,7 +4,7 @@ export function DisqusSection({articleId}) {
 	useLayoutEffect(() => {
 		// eslint-disable-next-line camelcase
 		window.disqus_config = function() {
-			this.page.url = "blog.rutherford.site";
+			this.page.url = `https://blog.rutherford.site/#${articleId}`;
 			this.page.identifier = articleId;
 		};
 
