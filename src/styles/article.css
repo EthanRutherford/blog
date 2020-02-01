@@ -1,0 +1,76 @@
+@import "./variables.css";
+
+.preview {
+	position: relative;
+	display: flex;
+	height: 100px;
+}
+.preview::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	box-shadow: inset 0 0 5px 2px white;
+}
+
+.preview-image {
+	flex-shrink: 0;
+	border-radius: 10px;
+	height: 100px;
+	width: 100px;
+	object-fit: cover;
+}
+
+.preview-details {
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+}
+.preview-details::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+	z-index: 1;
+}
+
+.preview-title {
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
+}
+
+.article {
+	position: relative;
+}
+.article::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	box-shadow: inset 0 0 5px 2px white;
+}
+
+.hero-photo {
+	margin-bottom: 20px;
+	border-radius: 10px;
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.content p {
+	margin: 10px 0;
+}
+
+.title {
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
+}

@@ -10,24 +10,36 @@ module.exports = (env) => ({
 		new MiniCssExtractPlugin({filename: "styles.css"}),
 	],
 	module: {
-		rules: [{
-			test: /\.css$/,
-			use: [
-				MiniCssExtractPlugin.loader,
-				{
-					loader: "css-loader", options: {
-						localsConvention: "camelCaseOnly",
-						modules: {
-							localIdentName: "[name]__[local]--[hash:base64:5]",
+		rules: [
+			{
+				test: /\.css$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: "css-loader", options: {
+							localsConvention: "camelCaseOnly",
+							modules: {
+								localIdentName: "[name]__[local]--[hash:base64:5]",
+							},
 						},
 					},
-				},
-			],
-		}, {
-			test: /\.(js|jsx)$/,
-			exclude: /node_modules/,
-			use: "babel-loader",
-		}],
+				],
+			}, {
+				test: /\.png$/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							publicPath: "/dist",
+						},
+					}
+				],
+			}, {
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				use: "babel-loader",
+			}
+		],
 	},
 	resolve: {extensions: [".js", ".jsx", ".json", ".css"]},
 });

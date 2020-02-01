@@ -21,8 +21,10 @@ html {
 }
 button {
 	background: none;
-	cursor: pointer;
 	transition: all 100ms;
+}
+a, button {
+	cursor: pointer;
 }
 ::-moz-focus-inner {
 	border: 0;

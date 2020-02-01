@@ -18,19 +18,86 @@
 	--carbon: hsl(0, 0%, 12%);
 }
 
+.article__preview--1nsrD {
+	position: relative;
+	display: flex;
+	height: 100px;
+}
+.article__preview--1nsrD::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	box-shadow: inset 0 0 5px 2px white;
+}
+
+.article__preview-image--1y4GZ {
+	flex-shrink: 0;
+	border-radius: 10px;
+	height: 100px;
+	width: 100px;
+	object-fit: cover;
+}
+
+.article__preview-details--hKc1I {
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+}
+.article__preview-details--hKc1I::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+	z-index: 1;
+}
+
+.article__preview-title--2XMv5 {
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
+}
+
+.article__article--2sKUC {
+	position: relative;
+}
+.article__article--2sKUC::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	box-shadow: inset 0 0 5px 2px white;
+}
+
+.article__hero-photo--3LPN8 {
+	margin-bottom: 20px;
+	border-radius: 10px;
+	height: 200px;
+	width: 100%;
+	object-fit: cover;
+}
+
+.article__content--2-vzo p {
+	margin: 10px 0;
+}
+
+.article__title--3VQnu {
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
+}
+
 .root {
 	height: 100%;
 	background-color: var(--not-white);
 	color: var(--carbon);
 	overflow: auto;
-}
-
-.root__header--2cKb8 {
-	margin: auto;
-	max-width: 1200px;
-	font-family: 'Roboto Slab';
-	font-size: var(--huge);
-	font-weight: bold;
 }
 
 .root__main-content--2O5Z7 {
@@ -40,6 +107,16 @@
 	max-width: 1200px;
 	min-height: 100%;
 	background-color: white;
+}
+
+.root__header--2cKb8 {
+	margin-bottom: 20px;
+}
+
+.root__title--1jTkO {
+	font-family: 'Roboto Slab';
+	font-size: var(--huge);
+	font-weight: bold;
 }
 
 html, body, div, span, p, a, img,
@@ -63,8 +140,10 @@ html {
 }
 button {
 	background: none;
-	cursor: pointer;
 	transition: all 100ms;
+}
+a, button {
+	cursor: pointer;
 }
 ::-moz-focus-inner {
 	border: 0;
