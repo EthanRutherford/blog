@@ -1,10 +1,7 @@
-import {TestArticle} from "./test-article";
+import {pins, list} from "./article.list";
 
-export const articles = [
-	TestArticle,
-];
-
-export const articleMap = articles.reduce((map, article) => {
+export {pins, list};
+export const articleMap = pins.concat(list).reduce((map, article) => {
 	map[article.id] = article;
 	return map;
 }, {});

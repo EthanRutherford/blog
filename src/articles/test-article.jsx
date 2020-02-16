@@ -1,7 +1,7 @@
 import React from "react";
 import hero from "../images/universe.png";
 
-export function TestArticle({Renderer, ...props}) {
+export default function TestArticle({Renderer, ...props}) {
 	return (
 		<Renderer
 			heroPhoto={hero}
@@ -19,8 +19,7 @@ export function TestArticle({Renderer, ...props}) {
 			</p>
 			<p>paragraph two</p>
 			<p>paragraph three</p>
+			<p>if it wasn't clear already, this is a placeholder until I have some real articles</p>
 		</Renderer>
 	);
 }
-
-TestArticle.id = "test-article";
