@@ -1,10 +1,19 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+function template({template}, _, {componentName, props, jsx}) {
+	return template.ast`
+		import React from "react";
+		const ${componentName} = (${props}) => ${jsx};
+		export default ${componentName};
+	`;
+}
 
 module.exports = (env) => ({
 	entry: "./src/main.jsx",
 	output: {filename: "main.js"},
 	mode: env === "prod" ? "production" : "development",
-	devtool: env === "prod" ? "" : "cheap-eval-source-map",
+	devtool: env === "prod" ? "" : "eval-cheap-module-source-map",
 	devServer: {open: true, publicPath: "/dist", port: 8088},
 	plugins: [
 		new MiniCssExtractPlugin({filename: "styles.css"}),
@@ -32,14 +41,32 @@ module.exports = (env) => ({
 						options: {
 							publicPath: "/dist",
 						},
-					}
+					},
+				],
+			}, {
+				test: /.svg$/,
+				use: [
+					{
+						loader: "@svgr/webpack",
+						options: {
+							template,
+						},
+					},
+				],
+			}, {
+				test: /\.(list)$/,
+				use: [
+					"babel-loader",
+					path.resolve("./tools/article-loader.js"),
 				],
 			}, {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: "babel-loader",
-			}
+			},
 		],
 	},
-	resolve: {extensions: [".js", ".jsx", ".json", ".css"]},
+	resolve: {
+		extensions: [".js", ".jsx", ".json", ".css", ".svg"],
+	},
 });

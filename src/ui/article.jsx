@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from "react";
+import Pin from "../images/pin";
 import {DisqusSection} from "./disqus-section";
 import styles from "../styles/article";
 
-export function ArticlePreviewer({articleId, heroPhoto, title, setArticle, children}) {
+export function ArticlePreviewer({articleId, heroPhoto, title, setArticle, isPinned, children}) {
 	return (
 		<div className={styles.preview}>
 			<img className={styles.previewImage} src={heroPhoto} />
@@ -15,9 +16,10 @@ export function ArticlePreviewer({articleId, heroPhoto, title, setArticle, child
 						setArticle(articleId);
 					}}
 				>
+					{isPinned && <Pin className={styles.pinIcon} />}
 					{title}
 				</a>
-				{children[0]}
+				{children instanceof Array ? children[0] : children}
 			</div>
 		</div>
 	);

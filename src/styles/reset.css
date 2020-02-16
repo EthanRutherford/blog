@@ -14,7 +14,7 @@ canvas, footer, header {
 	font: inherit;
 }
 html {
-	font: var(--normal)/1.2 'Roboto';
+	font: var(--normal)/1.2 var(--body-font);
 }
 :focus {
 	outline: 0;

@@ -1,4 +1,8 @@
 :root {
+	/* font-families */
+	--title-font: "Roboto Slab";
+	--body-font: "Roboto";
+
 	/* font-sizes */
 	--tiny: 10px;
 	--small: 15px;
