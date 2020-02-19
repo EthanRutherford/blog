@@ -64,7 +64,7 @@
 .article__preview-title--2XMv5 {
 	display: flex;
 	font-family: var(--title-font);
-	font-size: var(--huge);
+	font-size: var(--large);
 	font-weight: bold;
 }
 
