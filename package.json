@@ -11,6 +11,7 @@
     "lint": "eslint **/*.jsx"
   },
   "dependencies": {
+    "fast-fuzzy": "^1.9.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -20,9 +21,11 @@
     "@rutherford/eslint-config": "^1.0.1",
     "@svgr/webpack": "^5.1.0",
     "babel-loader": "^8.0.6",
+    "cache-loader": "^4.1.0",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
     "file-loader": "^5.0.2",
+    "markdown-it": "^10.0.0",
     "mini-css-extract-plugin": "^0.9.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",

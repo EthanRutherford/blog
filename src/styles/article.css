@@ -65,6 +65,7 @@
 }
 
 .hero-photo {
+	display: flex;
 	margin-bottom: 20px;
 	border-radius: 10px;
 	height: 200px;
@@ -72,14 +73,13 @@
 	object-fit: cover;
 }
 
-.content p {
-	margin: 10px 0;
+.content {
+	margin: auto;
+	max-width: 800px;
 }
 
-.title {
-	font-family: var(--title-font);
-	font-size: var(--huge);
-	font-weight: bold;
+.content p {
+	margin: 10px 0;
 }
 
 .separator {

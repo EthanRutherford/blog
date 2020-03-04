@@ -11,7 +11,7 @@ function template({template}, _, {componentName, props, jsx}) {
 
 module.exports = (env) => ({
 	entry: "./src/main.jsx",
-	output: {filename: "main.js"},
+	output: {publicPath: "/dist"},
 	mode: env === "prod" ? "production" : "development",
 	devtool: env === "prod" ? "" : "eval-cheap-module-source-map",
 	devServer: {open: true, publicPath: "/dist", port: 8088},
@@ -24,6 +24,7 @@ module.exports = (env) => ({
 				test: /\.css$/,
 				use: [
 					MiniCssExtractPlugin.loader,
+					"cache-loader",
 					{
 						loader: "css-loader", options: {
 							localsConvention: "camelCaseOnly",
@@ -46,6 +47,7 @@ module.exports = (env) => ({
 			}, {
 				test: /.svg$/,
 				use: [
+					"cache-loader",
 					{
 						loader: "@svgr/webpack",
 						options: {
@@ -56,13 +58,17 @@ module.exports = (env) => ({
 			}, {
 				test: /\.(list)$/,
 				use: [
+					"cache-loader",
 					"babel-loader",
 					path.resolve("./tools/article-loader.js"),
 				],
 			}, {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				use: "babel-loader",
+				use: [
+					"cache-loader",
+					"babel-loader",
+				],
 			},
 		],
 	},
