@@ -30,7 +30,7 @@ export function ArticleRenderer({articleId, heroPhoto, title, children}) {
 		<div className={styles.article}>
 			<img className={styles.heroPhoto} src={heroPhoto} />
 			<div className={styles.content}>
-				<h1 className={styles.title}>{title}</h1>
+				<h1>{title}</h1>
 				{children}
 				<DisqusSection articleId={articleId} />
 			</div>

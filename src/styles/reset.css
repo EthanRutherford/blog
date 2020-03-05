@@ -11,18 +11,18 @@ canvas, footer, header {
 	border: 0;
 	vertical-align: baseline;
 	color: inherit;
-	font: inherit;
 }
 html {
-	font: var(--normal)/1.2 var(--body-font);
+	font: var(--normal)/1.4 var(--body-font);
 	tab-size: 4;
 }
 :focus {
 	outline: 0;
 }
-button {
+button, input {
 	background: none;
 	transition: all 100ms;
+	font: inherit;
 }
 a, button {
 	cursor: pointer;
@@ -35,4 +35,32 @@ ol, ul {
 }
 html, body {
 	height: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 20px 0;
+	font-family: var(--title-font);
+}
+h1 {
+	font-size: var(--huge);
+	font-weight: bold;
+}
+h2 {
+	font-size: var(--huge);
+	font-weight: normal;
+}
+h3 {
+	font-size: var(--large);
+	font-weight: bold;
+}
+h4 {
+	font-size: var(--large);
+	font-weight: normal;
+}
+h5 {
+	font-size: var(--normal);
+	font-weight: bold;
+}
+h6 {
+	font-size: var(--normal);
+	font-weight: normal;
 }

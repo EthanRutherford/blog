@@ -11,7 +11,7 @@ function template({template}, _, {componentName, props, jsx}) {
 
 module.exports = (env) => ({
 	entry: "./src/main.jsx",
-	output: {filename: "main.js"},
+	output: {publicPath: "/dist/"},
 	mode: env === "prod" ? "production" : "development",
 	devtool: env === "prod" ? "" : "eval-cheap-module-source-map",
 	devServer: {open: true, publicPath: "/dist", port: 8088},
