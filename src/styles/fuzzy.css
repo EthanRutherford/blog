@@ -20,6 +20,7 @@
 	display: flex;
 }
 .result-row>:first-child {
+	flex-shrink: 0;
 	width: 150px;
 }
 .result-row>:last-child {
