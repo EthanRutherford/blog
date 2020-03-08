@@ -1,21 +1,26 @@
 const markdown = require("markdown-it")({xhtmlOut: true, linkify: true});
 const checkInitialIndent = /^\s*?(\t*)\S/m;
 
-function fillPinholes(nodes, pins) {
-	for (let i = 0; i < nodes.length; i++) {
+function fillPinholes(node, pins) {
+	for (let i = 0; i < node.children.length; i++) {
+		const child = node.children[i];
 		if (
-			nodes[i].type === "JSXExpressionContainer" &&
-			nodes[i].expression.type === "Identifier" &&
-			nodes[i].expression.name.startsWith("mdjsxPinhole")
+			child.type === "JSXExpressionContainer" &&
+			child.expression.type === "Identifier" &&
+			child.expression.name.startsWith("mdjsxPinhole")
 		) {
-			const pinIndex = nodes[i].expression.name.slice(12);
-			nodes[i] = pins[pinIndex];
-		} else if (nodes[i].children) {
-			fillPinholes(nodes[i].children, pins);
+			const pin = pins[child.expression.name.slice(12)];
+			if (node.type === "JSXElement" && node.openingElement.name.name === "p") {
+				return pin;
+			}
+
+			node.children[i] = pin;
+		} else if (child.children) {
+			node.children[i] = fillPinholes(child, pins);
 		}
 	}
 
-	return nodes;
+	return node;
 }
 
 module.exports = (babel) => {
@@ -42,12 +47,12 @@ module.exports = (babel) => {
 				const indent = textContent.match(checkInitialIndent)[1];
 				const regex = new RegExp(indent, "g");
 				const text = textContent.replace(regex, "").trim();
-				const newChildren = babel.parse(
+				const parsed = babel.parse(
 					`<>${markdown.render(text)}</>`,
 					{presets: ["@babel/preset-react"]},
-				).program.body[0].expression.children;
+				).program.body[0].expression;
 
-				path.node.children = fillPinholes(newChildren, pins);
+				path.node.children = fillPinholes(parsed, pins).children;
 			},
 		},
 	};
