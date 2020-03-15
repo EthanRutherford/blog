@@ -8,7 +8,7 @@
   "scripts": {
     "build": "webpack --env prod",
     "start": "start webpack-dev-server",
-    "lint": "eslint **/*.jsx"
+    "lint": "eslint **/*.js?(x)"
   },
   "dependencies": {
     "fast-fuzzy": "^1.9.1",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
-    "@rutherford/eslint-config": "^1.0.1",
+    "@rutherford/eslint-config": "^1.0.3",
     "@svgr/webpack": "^5.1.0",
     "babel-loader": "^8.0.6",
     "cache-loader": "^4.1.0",

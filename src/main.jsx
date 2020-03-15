@@ -47,7 +47,9 @@ function App() {
 						event.preventDefault();
 						goBack();
 					}}
-				>bleg</a>
+				>
+					bleg
+				</a>
 			</div>
 			{Article == null ? (
 				<List setArticle={setArticle} />
