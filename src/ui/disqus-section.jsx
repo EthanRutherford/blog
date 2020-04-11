@@ -3,7 +3,9 @@ import React, {useLayoutEffect} from "react";
 export function DisqusSection({articleId}) {
 	useLayoutEffect(() => {
 		function config() {
+			// eslint-disable-next-line react/no-this-in-sfc
 			this.page.url = `https://blog.rutherford.site/#${articleId}`;
+			// eslint-disable-next-line react/no-this-in-sfc
 			this.page.identifier = articleId;
 		}
 

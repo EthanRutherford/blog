@@ -10,7 +10,7 @@ export function ArticlePreviewer({articleId, heroPhoto, title, setArticle, isPin
 			<div className={styles.previewDetails}>
 				<a
 					className={styles.previewTitle}
-					href={`/#articleId`}
+					href={`/#${articleId}`}
 					onClick={(event) => {
 						event.preventDefault();
 						setArticle(articleId);

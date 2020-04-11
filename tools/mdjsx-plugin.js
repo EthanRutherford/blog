@@ -10,7 +10,11 @@ function fillPinholes(node, pins) {
 			child.expression.name.startsWith("mdjsxPinhole")
 		) {
 			const pin = pins[child.expression.name.slice(12)];
-			if (node.type === "JSXElement" && node.openingElement.name.name === "p") {
+			if (
+				node.type === "JSXElement" &&
+				node.openingElement.name.name === "p" &&
+				node.children.length === 1
+			) {
 				return pin;
 			}
 
