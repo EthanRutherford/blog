@@ -52,7 +52,7 @@ module.exports = (babel) => {
 				const regex = new RegExp(indent, "g");
 				const text = textContent.replace(regex, "").trim();
 				const parsed = babel.parse(
-					`<>${markdown.render(text)}</>`,
+					`<>${markdown.render(text).replace(/\n/g, " ")}</>`,
 					{presets: ["@babel/preset-react"]},
 				).program.body[0].expression;
 
