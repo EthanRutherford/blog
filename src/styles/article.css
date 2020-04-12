@@ -84,6 +84,13 @@
 	margin: 10px 0;
 }
 
+.content code {
+	border: 1px solid #0022bb;
+	border-radius: 5px;
+	padding: 0 5px;
+	background: #bbddff;
+}
+
 .separator {
 	border-bottom: 1px solid var(--carbon);
 	margin-bottom: 10px;

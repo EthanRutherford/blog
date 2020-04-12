@@ -80,11 +80,11 @@ export default function FuzzyOverview({Renderer, ...props}) {
 			with much larger datasets than the original use case, I gradually improved the
 			performance, and added new options.
 
-			The first article in this series will cover the design of the underlying
-			algorithm, and the earliest optimizations I made to handle larger datasets.
+			The first article in this series will cover the design of the underlying algorithm.
 
 			* **[Writing fast-fuzzy - Overview](/#fuzzy-overview)**
-			* **Writing fast-fuzzy - Part 1** (coming soon)
+			* **[Writing fast-fuzzy - Part 1](/#fuzzy-1)**
+			* **Writing fast-fuzzy - Part 2** (coming soon)
 		</Renderer>
 	);
 }
